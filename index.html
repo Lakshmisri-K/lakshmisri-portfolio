@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshmi Sri.K | Agriculture Portfolio</title>
+
+<style>
+
+/* ===== GENERAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f9f4;
+    color:#2e3d2f;
+    scroll-behavior:smooth;
+}
+
+section{
+    padding:110px 10% 80px;
+    min-height:80vh;
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s ease forwards;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2.3rem;
+    color:#2e7d32;
+}
+
+/* ===== NAV ===== */
+nav{
+    background:#1b5e20;
+    color:white;
+    padding:1rem 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#a5d6a7;
+}
+
+/* ===== HERO SECTION ===== */
+#home{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    background:linear-gradient(rgba(27,94,32,0.8),rgba(27,94,32,0.8)),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-text{
+    flex:1;
+    animation:slideLeft 1.2s ease;
+}
+
+.hero-text h1{
+    font-size:3rem;
+}
+
+.hero-text span{
+    color:#c8e6c9;
+}
+
+.hero-image{
+    flex:1;
+    text-align:center;
+    animation:slideRight 1.2s ease;
+}
+
+.hero-image img{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #a5d6a7;
+    transition:0.5s;
+}
+
+.hero-image img:hover{
+    transform:scale(1.08);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Floating Leaf Animation */
+#home::after{
+    content:"🌿";
+    position:absolute;
+    font-size:40px;
+    animation:floatLeaf 6s infinite linear;
+}
+
+@keyframes floatLeaf{
+    0%{ transform:translateY(-20px) translateX(0); opacity:0; }
+    50%{ opacity:1; }
+    100%{ transform:translateY(300px) translateX(50px); opacity:0; }
+}
+/* ===== ABOUT SECTION ===== */
+#about{
+    background:linear-gradient(to right,#f1f8e9,#e8f5e9);
+    text-align:center;
+}
+
+.about-container{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    line-height:1.8;
+    font-size:16px;
+    transition:0.4s;
+}
+
+.about-container:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(46,125,50,0.3);
+}
+/* ===== SKILLS ===== */
+/* ===== ENHANCED SKILLS SECTION ===== */
+
+#skills{
+    background:linear-gradient(to right, #e8f5e9, #f1f8e9);
+}
+
+.skills-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+/* Glass Effect Card */
+.skill-card{
+    width:260px;
+    min-height:130px;
+    padding:25px 20px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:15px;
+    line-height:1.6;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(46,125,50,0.3);
+}
+
+/* Icon Style */
+.skill-card span{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+/* ===== PROJECTS ===== */
+.projects-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    justify-content:center;
+}
+
+.project-card{
+    background:white;
+    width:320px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.project-card img:hover{
+    transform:scale(1.05);
+}
+
+.project-content{
+    padding:20px;
+}
+
+.github-btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 18px;
+    background:#1b5e20;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.github-btn:hover{
+    background:#43a047;
+}
+
+/* ===== EDUCATION ===== */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== CONTACT ===== */
+#contact{
+    text-align:center;
+}
+
+.contact-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#2e7d32;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.contact-btn:hover{
+    background:#1b5e20;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideLeft{
+    from{opacity:0; transform:translateX(-50px);}
+    to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes slideRight{
+    from{opacity:0; transform:translateX(50px);}
+    to{opacity:1; transform:translateX(0);}
+}
+/* ===== EXPERIENCE & CERTIFICATIONS ===== */
+.timeline-container{
+    max-width:900px;
+    margin:auto;
+}
+
+.timeline-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom:25px;
+    transition:0.4s;
+}
+
+.timeline-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(46,125,50,0.3);
+
+}
+.timeline-card ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.timeline-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Certificate Image */
+.certificate-img{
+    width:100%;
+    max-width:300px;
+    margin-top:15px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.certificate-img:hover{
+    transform:scale(1.05);
+}
+
+/* Modal */
+.modal{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    padding-top:100px;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.9);
+}
+
+.modal-content{
+    margin:auto;
+    display:block;
+    width:80%;
+    max-width:800px;
+}
+
+.close{
+    position:absolute;
+    top:40px;
+    right:60px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    #home{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav ul{
+        display:none;
+    }
+
+    .hero-image img{
+        width:200px;
+        height:200px;
+        margin-top:20px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Lakshmi Sri.K</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <div class="hero-text">
+        <h1>Hi, I'm <br><span>Lakshmi Sri.K</span></h1>
+        <p>Agriculture & Management Professional | Research-Driven | Adaptable | Growth-Oriented</p>
+    </div>
+    <div class="hero-image">
+        <img src="lakshmi.jpg.jpg" >
+    </div>
+</section>
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <p>
+           Myself Lakshmi Sri, an Agriculture graduate with a Post Graduate Diploma in Agri-Warehousing Management (PGDAWM). With hands-on experience as a Mushroom Research Associate Intern and remote HR Intern, I bring a blend of agricultural expertise and organizational skills.
+        </p>
+        <br>
+        <p>
+         I am a confident and adaptable professional with high learning agility, committed to delivering results, driving efficiency, and contributing strategically to progressive organizations. I thrive in structured corporate environments where continuous improvement, innovation, and performance excellence are valued.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <span>🌾</span>
+            <strong>Sustainable Agriculture</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>🍄</span>
+            <strong>Mushroom Production</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>♻️</span>
+            <strong>Vermicomposting</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>🏬</span>
+            <strong>Warehousing & Storage</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>🔬</span>
+            <strong>Research</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>👥</span>
+            <strong>HR Management</strong>
+        </div>
+
+        <div class="skill-card">
+            <span>🧠</span>
+            <strong>Soft Skills</strong>
+            <p style="font-size:13px; margin-top:8px;">
+                Leadership • Teamwork • Problem Solving • Strategy • Presentation • Learning Agility
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Agriculture Projects</h2>
+    <div class="projects-container">
+
+        <div class="project-card">
+            <h2><span class="section-icon">🎓</span> Academic Project</h2>
+            <div class="project-content">
+                <h3>Quality Analysis of selected Traditional Rice Varieties</h3>
+                <p>Conducted experiments to study the physical,cooking and nutritional characteristics of selected traditional rice varieties.the project concluded that selected traditional rice varieties are highly beneficial organic varieties and can very well serve as healthy substitutes to the conventional rice varieties avaliable in the market</p>
+        
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <div class="card">
+        <h3>PG Diploma in Agri-Warehousing Management</h3>
+        <p>National Institute Of Agricultural Extension Management(MANAGE) | 2024-2025 | Percentage : 84%</p>
+        <h3>B.Sc. (Hons.) AGRICULTURE</h3>
+        <p>RVS Agricultural College | 2019-2023 | OGPA : 8.37</p>
+    </div>
+</section>
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline-container">
+
+        <div class="timeline-card">
+            <h3>Mushroom Research Associate Intern</h3>
+            <p>At ShroomaNova ,Erode,Tamilnadu | Jun 2025 - Aug 2025</p>
+            <ul>
+    <li>Conducted hands-on research in mushroom cultivation including substrate preparation, sterilization, inoculation, and controlled-environment fruiting trials.</li>
+
+    <li>Monitored and recorded growth parameters such as temperature, humidity, colonization rate, and contamination levels.</li>
+
+    <li>Analyzed data trends and supported strain selection experiments to improve production efficiency and reduce losses.</li>
+
+    <li>Assisted in harvesting operations ensuring proper handling techniques to maintain product quality.</li>
+
+    <li>Managed post-harvest processes including grading, weighing, and hygienic packaging for market distribution.</li>
+</ul>
+        </div>
+
+        <div class="timeline-card">
+            <h3>HR  & NGO & Social Work Intern (Remote)</h3>
+            <p>At Partnerdesk | Nov 2025 - Jan 2026</p>
+            <ul>
+    <li>Assisted in end-to-end recruitment processes including job postings, resume screening, interview coordination, and onboarding documentation.</li>
+
+    <li>Maintained employee records, attendance tracking, and HR databases while ensuring confidentiality.</li>
+
+    <li>Supported fundraising efforts by creating and sharing awareness posts on LinkedIn.</li>
+
+    <li>Engaged with community circles and personal networks to promote the organization's cause.</li>
+
+    <li>Maintained records of collected funds and donor details to ensure transparency.</li>
+</ul>
+           
+        </div>
+        <div class="timeline-card">
+            <h3>HR Intern (Remote) </h3>
+            <p>At Sanyukt Organisation | Dec 2025 - Jan 2026</p>
+           <ul>
+    <li>Created job descriptions (JDs) and designed recruitment posters for hiring processes.</li>
+
+    <li>Posted job openings on LinkedIn and conducted candidate research.</li>
+
+    <li>Screened resumes and coordinated interview schedules.</li>
+
+    <li>Participated in preliminary interviews.</li>
+
+    <li>Supported basic fundraising initiatives when required.</li>
+</ul>
+            
+        </div>
+
+    </div>
+</section>
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="timeline-container">
+
+        <div class="timeline-card">
+            <h3>Mushroom Research Associate Internship</h3>
+            <img src="Mushroom Research Associate Internship.jpg" class="certificate-img" onclick="openModal(this)">
+        </div>
+         <div class="timeline-card">
+            <h3>HR Internship</h3>
+            <img src="HR Internship.jpg" class="certificate-img" onclick="openModal(this)">
+        </div>
+
+
+        <div class="timeline-card">
+            <h3>HR Management Internship</h3>
+            <img src="HR Management Internship.png" class="certificate-img" onclick="openModal(this)">
+        </div>
+
+        <div class="timeline-card">
+            <h3>NGO & Social Work Internship</h3>
+            <img src="NGO & Social Work Internship.png" class="certificate-img" onclick="openModal(this)">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+
+    <p>Gmail: lakshmisripsm@gmail.com</p>
+    <a href="mailto:lakshmisripsm@gmail.com" class="contact-btn">
+         📧 Send Gmail
+    </a>
+
+    <br><br>
+
+    <p>LinkedIn:</p>
+    <a href="https://www.linkedin.com/in/lakshmi-srii"
+       target="_blank"
+       class="contact-btn">
+        🔗 View LinkedIn
+    </a>
+</section>
+
+</body>
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script>
+function openModal(img){
+    document.getElementById("myModal").style.display="block";
+    document.getElementById("img01").src=img.src;
+}
+
+function closeModal(){
+    document.getElementById("myModal").style.display="none";
+}
+</script>
+</html>
